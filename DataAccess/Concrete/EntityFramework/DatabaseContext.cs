@@ -6,11 +6,11 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    class DatabaseContext : DbContext
+    public class DatabaseContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localDb)\mssqllocaldb;Database=ReCapProject;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=desktop-fdb5sjp\sqlexpress;Database=ReCapProject;Trusted_Connection=true");
         }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Brand> Brands { get; set; }
