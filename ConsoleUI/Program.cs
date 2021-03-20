@@ -11,7 +11,18 @@ namespace ConsoleUI
         {
             //CarTest();
             //BrandTest();
-            ColorTest();
+            //ColorTest();
+            RentalTest();
+        }
+
+        private static void RentalTest()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.GetCarRentalDetails();
+            foreach (var rental in result.Data)
+            {
+                Console.WriteLine(rental.CarId + " " + rental.BrandName + " " + rental.ColorName);
+            }
         }
 
         private static void ColorTest()
