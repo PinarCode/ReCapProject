@@ -41,7 +41,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == colorId));
         }
 
-        public IResult Insert(Color color)
+        public IResult Add(Color color)
         {
             if (color.ColorName.Length<3)
             {

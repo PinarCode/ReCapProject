@@ -42,9 +42,9 @@ namespace Business.Concrete
             return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == brandId));
         }
 
-        public IResult Insert(Brand brand)
+        public IResult Add(Brand brand)
         {
-            if (brand.BrandName.Length<3)
+            if (brand.BrandName.Length<2)
             {
                 return new ErrorResult(Messages.BrandNameInvalid);
             }

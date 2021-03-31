@@ -42,7 +42,7 @@ namespace Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(u => u.Id == userId));
         }
 
-        public IResult Insert(User user)
+        public IResult Add(User user)
         {
             if (user.FirstName.Length < 3)
             {
