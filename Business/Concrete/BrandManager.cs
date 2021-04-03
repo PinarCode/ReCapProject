@@ -20,10 +20,7 @@ namespace Business.Concrete
 
         public IResult Delete(Brand brand)
         {
-            if (brand.BrandName.Length<2)
-            {
-                return new ErrorResult(Messages.BrandNameInvalid);
-            }
+           
             _brandDal.Delete(brand);
             return new SuccessResult(Messages.BrandDeleted);
         }
@@ -44,20 +41,12 @@ namespace Business.Concrete
 
         public IResult Add(Brand brand)
         {
-            if (brand.BrandName.Length<2)
-            {
-                return new ErrorResult(Messages.BrandNameInvalid);
-            }
             _brandDal.Add(brand);
             return new SuccessResult(Messages.BrandAdded);
         }
 
         public IResult Update(Brand brand)
         {
-            if (brand.BrandName.Length<3)
-            {
-                return new ErrorResult(Messages.BrandNameInvalid);
-            }
             _brandDal.Update(brand);
             return new SuccessResult(Messages.BrandUpdated);
         }

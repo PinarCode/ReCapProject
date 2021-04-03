@@ -19,10 +19,6 @@ namespace Business.Concrete
 
         public IResult Delete(Color color)
         {
-            if (color.ColorName.Length<3)
-            {
-                return new ErrorResult(Messages.ColorNameInvalid);
-            }
             _colorDal.Delete(color);
             return new SuccessResult(Messages.ColorDeleted);
         }
@@ -43,20 +39,12 @@ namespace Business.Concrete
 
         public IResult Add(Color color)
         {
-            if (color.ColorName.Length<3)
-            {
-                return new ErrorResult(Messages.ColorNameInvalid);
-            }
             _colorDal.Add(color);
             return new SuccessResult(Messages.BrandAdded);
         }
 
         public IResult Update(Color color)
         {
-            if (color.ColorName.Length<3)
-            {
-                return new ErrorResult(Messages.ColorNameInvalid);
-            }
             _colorDal.Update(color);
             return new SuccessResult(Messages.ColorUpdated);
         }

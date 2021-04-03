@@ -20,10 +20,6 @@ namespace Business.Concrete
 
         public IResult Delete(Customer customer)
         {
-            if (customer.CompanyName.Length<3)
-            {
-                return new ErrorResult(Messages.CustomerNameInvalid);
-            }
             _customerDal.Delete(customer);
             return new SuccessResult(Messages.CustomerDeleted);
         }
@@ -44,20 +40,12 @@ namespace Business.Concrete
 
         public IResult Add(Customer customer)
         {
-            if (customer.CompanyName.Length < 3)
-            {
-                return new ErrorResult(Messages.CustomerNameInvalid);
-            }
             _customerDal.Add(customer);
             return new SuccessResult(Messages.CustomerAdded);
         }
 
         public IResult Update(Customer customer)
         {
-            if (customer.CompanyName.Length < 3)
-            {
-                return new ErrorResult(Messages.CustomerNameInvalid);
-            }
             _customerDal.Update(customer);
             return new SuccessResult(Messages.CustomerUpdated);
         }

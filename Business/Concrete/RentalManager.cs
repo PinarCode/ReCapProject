@@ -46,10 +46,6 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            if (_rentalDal.GetAll(r => r.CarId == rental.CarId && rental.ReturnDate == null).Count != 0)
-            {
-                return new ErrorResult(Messages.RentalInvalid);
-            }
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);
         }
