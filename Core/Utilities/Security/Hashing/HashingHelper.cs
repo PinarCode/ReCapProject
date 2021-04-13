@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Utilities.Helper
+namespace Core.Utilities.Security.Helper
 {
     public class HashingHelper
     {

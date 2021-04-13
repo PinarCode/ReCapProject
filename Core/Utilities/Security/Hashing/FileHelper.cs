@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Core.Utilities.Helper
+namespace Core.Utilities.Security.Helper
 {
     public class FileHelper
     {
